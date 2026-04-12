@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class task2 {
+public class task5 {
     public static void main(String[] args){
         Scanner sc= new Scanner(System.in);
         System.out.println("Enter first number: ");
@@ -9,16 +9,19 @@ public class task2 {
         int b=sc.nextInt();
         System.out.println("Enter third number: ");
         int c=sc.nextInt();
-        task2 ex2=new task2();
-        System.out.println("No Teen Sum: "+ex2.noTeenSum(a,b,c));
+        task5 ex5=new task5();
+        System.out.println("No Teen Sum: "+ex5.roundSum(a,b,c));
     }
-    public int fixTean(int n){
-        if(n>=13 && n<=19 && n!=15 && n!=16){
-            return 0;
+
+    public int round10(int n){
+        int reminder = n % 10;
+        if (reminder >= 5){
+            return n + (10 - reminder);
         }
-        return n;
+        return n -reminder;
     }
-    public int noTeenSum(int a, int b, int c){
-        return fixTean(a) + fixTean(b) + fixTean(c);
+    public int roundSum(int a, int b, int c){
+        return round10(a) + round10(b) +round10(c);
     }
+
 }
